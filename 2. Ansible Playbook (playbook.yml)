@@ -1,0 +1,8 @@
+---
+- name: Deploy Grafana Alloy with Mimir Monitoring
+  hosts: all
+  become: true
+  roles:
+    - grafana
+    - mimir
+    - { role: telegram_alert, when: alerting_enabled | default(false) }
