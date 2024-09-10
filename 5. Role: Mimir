@@ -1,0 +1,17 @@
+---
+- name: Install Mimir
+  apt:
+    name: mimir
+    state: present
+
+- name: Copy Mimir configuration
+  template:
+    src: mimir-config.yaml.j2
+    dest: /etc/mimir/mimir.yaml
+    mode: '0644'
+
+- name: Start and enable Mimir
+  service:
+    name: mimir
+    state: started
+    enabled: true
