@@ -1,0 +1,23 @@
+# deploy-grafana-alloy.yml
+---
+- hosts: grafana_server
+  become: yes
+  tasks:
+    - name: Install necessary packages
+      apt:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - docker.io
+        - docker-compose
+    - name: Deploy Grafana Alloy and Mimir
+      copy:
+        src: ./docker-compose.yml
+        dest: /opt/grafana/docker-compose.yml
+      notify: Restart Grafana Services
+
+handlers:
+  - name: Restart Grafana Services
+    systemd:
+      name: docker
+      state: restarted
