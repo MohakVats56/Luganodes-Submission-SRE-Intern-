@@ -1,0 +1,17 @@
+{
+  "dashboard": {
+    "title": "Cosmos Chain Monitoring",
+    "panels": [
+      {
+        "type": "graph",
+        "title": "Node CPU Usage",
+        "targets": [
+          {
+            "expr": "rate(node_cpu_seconds_total{mode='system'}[1m])",
+            "legendFormat": "{{cpu}}"
+          }
+        ]
+      }
+    ]
+  }
+}
