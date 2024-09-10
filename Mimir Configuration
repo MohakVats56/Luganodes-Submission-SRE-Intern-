@@ -1,0 +1,11 @@
+# mimir.yml
+multitenancy_enabled: true
+schema:
+  configs:
+    - from: "2024-01-01"
+      store: boltdb-shipper
+      object_store: s3
+      index:
+        prefix: mimir_index_
+      chunks:
+        prefix: mimir_chunks_
