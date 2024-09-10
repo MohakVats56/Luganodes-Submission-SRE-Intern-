@@ -1,0 +1,24 @@
+# Grafana Alloy Deployment via Ansible with Monitoring
+
+## Overview
+This project provides an Ansible playbook for deploying Grafana Alloy along with Mimir for monitoring a self-hosted Cosmos chain using the Ignite CLI.
+
+### Prerequisites
+- Ansible installed on your local machine
+- Access to the server where Grafana Alloy will be installed
+
+### Setup
+
+1. Clone this repository:
+    ```bash
+    git clone <repository-url>
+    ```
+
+2. Define your server IP and user in `inventory.ini`.
+
+3. To deploy Grafana and Mimir, run the playbook:
+    ```bash
+    ansible-playbook -i inventory.ini playbook.yml
+    ```
+
+4. (Optional) To enable alerting via Telegram, set `alerting_enabled` to `true` in the playbook.
