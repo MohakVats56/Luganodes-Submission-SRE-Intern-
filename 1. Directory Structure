@@ -1,0 +1,24 @@
+grafana-alloy-deployment/
+├── ansible/
+│   ├── playbook.yml
+│   ├── inventory.ini
+│   ├── roles/
+│   │   ├── grafana/
+│   │   │   ├── tasks/
+│   │   │   │   └── main.yml
+│   │   │   ├── templates/
+│   │   │   │   └── grafana.ini.j2
+│   │   ├── mimir/
+│   │   │   ├── tasks/
+│   │   │   │   └── main.yml
+│   │   │   ├── templates/
+│   │   │   │   └── mimir-config.yaml.j2
+│   │   └── telegram_alert/
+│   │       ├── tasks/
+│   │       │   └── main.yml
+│   │       └── templates/
+│   │           └── telegram-config.j2
+├── docs/
+│   └── setup.md
+└── demo/
+    └── demo-video.mp4
